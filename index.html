@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çanakkale 18 Mart - Dinleme ve İzleme Anlama Etkinliği</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid #c0392b; /* Çanakkale temasına uygun kırmızı bir dokunuş */
+        }
+        h1 {
+            text-align: center;
+            color: #c0392b;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        .question-block {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        select, input[type="number"] {
+            padding: 5px;
+            margin-left: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn-submit:hover {
+            background-color: #2ecc71;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            display: none;
+        }
+        .correct-bg { background-color: #d4edda; border: 1px solid #c3e6cb; }
+        .incorrect-bg { background-color: #f8d7da; border: 1px solid #f5c6cb; }
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+        .text-green { color: #28a745; }
+        .text-red { color: #dc3545; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Çanakkale 18 Mart Etkinliği</h1>
+    <p>Aşağıdaki soruları dinlediğiniz/okuduğunuz fragmana göre yanıtlayınız. Tüm soruları cevapladıktan sonra sonucunuzu görmek için butona tıklayabilirsiniz.</p>
+
+    <form id="quizForm">
+        
+        <h2>Çoktan Seçmeli Sorular</h2>
+        
+        <div class="question-block" id="qb1">
+            <div class="question-title">1. Fragmana göre, düşmanın sahip olduğu askeri güç ve büyüklük aşağıdakilerin hangisiyle ifade edilmiştir?</div>
+            <label><input type="radio" name="q1" value="A"> A) Yenilmez piyade birlikleri ve uçaklar</label>
+            <label><input type="radio" name="q1" value="B"> B) 18 yüzen kale ve 600 top</label>
+            <label><input type="radio" name="q1" value="C"> C) Gece karanlığında saldıran denizaltılar</label>
+            <label><input type="radio" name="q1" value="D"> D) Sınırları aşan kalabalık ordular</label>
+            <div class="feedback" id="f1"></div>
+        </div>
+
+        <div class="question-block" id="qb2">
+            <div class="question-title">2. Boğazın savunulmasında kritik bir rol oynayan "mayın dökme" görevi metne göre hangi gemiye verilmiştir?</div>
+            <label><input type="radio" name="q2" value="A"> A) Muavenet-i Milliye</label>
+            <label><input type="radio" name="q2" value="B"> B) Yavuz</label>
+            <label><input type="radio" name="q2" value="C"> C) Midilli</label>
+            <label><input type="radio" name="q2" value="D"> D) Nusrat</label>
+            <div class="feedback" id="f2"></div>
+        </div>
+
+        <div class="question-block" id="qb3">
+            <div class="question-title">3. Cephede savaşan askerlerin durumunu komutana bildiren "Eriyoruz başkan. Kar gibi eriyoruz." ifadesinde anlatılmak istenen temel durum nedir?</div>
+            <label><input type="radio" name="q3" value="A"> A) Siperlerdeki askerlerin soğuk hava ve kar yağışı nedeniyle donma tehlikesi geçirdiği</label>
+            <label><input type="radio" name="q3" value="B"> B) Askerlerin düşman ateşi altında kalarak hızla ve çok sayıda şehit düştüğü</label>
+            <label><input type="radio" name="q3" value="C"> C) Düşman donanmasının güllelerinin karları erittiği</label>
+            <label><input type="radio" name="q3" value="D"> D) Cephanenin ve erzakların hızla tükendiği</label>
+            <div class="feedback" id="f3"></div>
+        </div>
+
+        <div class="question-block" id="qb4">
+            <div class="question-title">4. Metne göre Türk askerini yenilmez kılan, hiçbir ordunun veya silahın alt edemeyeceği en büyük güç nedir?</div>
+            <label><input type="radio" name="q4" value="A"> A) Yurt (vatan) sevgisi</label>
+            <label><input type="radio" name="q4" value="B"> B) Ellerindeki gelişmiş silahlar</label>
+            <label><input type="radio" name="q4" value="C"> C) Düşmanın savaş taktiklerini bilmeleri</label>
+            <label><input type="radio" name="q4" value="D"> D) Çanakkale Boğazı'nın coğrafi yapısı</label>
+            <div class="feedback" id="f4"></div>
+        </div>
+
+        <h2>Doğru / Yanlış Soruları</h2>
+        
+        <div class="question-block">
+            <div class="question-title">5. Aşağıdaki ifadelerin doğru (D) mu yanlış (Y) mı olduğunu seçiniz.</div>
+            <label>Düşmanın donanması, askerler tarafından zayıf ve yetersiz görülmektedir. 
+                <select name="q5a" id="q5a"><option value="">Seçiniz</option><option value="D">Doğru</option><option value="Y">Yanlış</option></select> <span class="feedback" id="f5a"></span>
+            </label>
+            <label>Mayın dökme görevinin gece karanlığında, aynı gece içinde yerine getirilmesi planlanmıştır. 
+                <select name="q5b" id="q5b"><option value="">Seçiniz</option><option value="D">Doğru</option><option value="Y">Yanlış</option></select> <span class="feedback" id="f5b"></span>
+            </label>
+            <label>Metne göre askerlerin en büyük manevi desteklerinden biri de arkalarında bıraktıkları analarının dualarıdır. 
+                <select name="q5c" id="q5c"><option value="">Seçiniz</option><option value="D">Doğru</option><option value="Y">Yanlış</option></select> <span class="feedback" id="f5c"></span>
+            </label>
+            <label>"Anadolu toprağının sırrı", insanların sadece kan bağıyla değil, vatan uğruna can bağıyla da birbirine bağlı olmasıdır. 
+                <select name="q5d" id="q5d"><option value="">Seçiniz</option><option value="D">Doğru</option><option value="Y">Yanlış</option></select> <span class="feedback" id="f5d"></span>
+            </label>
+        </div>
+
+        <h2>Eşleştirme Sorusu</h2>
+        
+        <div class="question-block">
+            <div class="question-title">6. Fragmanda geçen kavramları anlamlarıyla eşleştiriniz (A, B, C, D).</div>
+            <p><strong>Anlamlar:</strong><br>
+            A) Metne göre hiçbir ordunun veya silahın alt edemeyeceği en büyük manevi güç.<br>
+            B) Gece karanlığında boğaza mayın dökmekle görevlendirilen ve dönmemeyi göze alan tarihi gemi.<br>
+            C) Cephede askerlerin yoğun ateş altında hızla şehit düşmesini anlatan benzetme.<br>
+            D) Düşman donanmasının büyüklüğünü, heybetini ve yenilmez gibi görünen gücünü temsil eden ifade.</p>
+
+            <label>I. Yüzen kale: <select name="q6a" id="q6a"><option value="">Seçiniz</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select> <span class="feedback" id="f6a"></span></label>
+            <label>II. Nusrat: <select name="q6b" id="q6b"><option value="">Seçiniz</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select> <span class="feedback" id="f6b"></span></label>
+            <label>III. Kar gibi erimek: <select name="q6c" id="q6c"><option value="">Seçiniz</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select> <span class="feedback" id="f6c"></span></label>
+            <label>IV. Yurt sevgisi: <select name="q6d" id="q6d"><option value="">Seçiniz</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select> <span class="feedback" id="f6d"></span></label>
+        </div>
+
+        <h2>Sıralama Sorusu</h2>
+        
+        <div class="question-block">
+            <div class="question-title">7. Aşağıda fragmanda geçen bazı olaylar ve diyaloglar karışık olarak verilmiştir. Bu ifadeleri transkriptteki gerçekleşme sırasına göre 1'den 5'e kadar numaralandırınız.</div>
+            <label><input type="number" min="1" max="5" id="q7a"> Askerlerin yoğun ateş altında "kar gibi eridiklerini" belirtmesi. <span class="feedback" id="f7a"></span></label>
+            <label><input type="number" min="1" max="5" id="q7b"> Düşmanın "18 yüzen kale ve 600 top" ile kapıya dayanmasının söylenmesi. <span class="feedback" id="f7b"></span></label>
+            <label><input type="number" min="1" max="5" id="q7c"> Bir askerin, annesine şehit olmaktan gurur duyduğunun iletilmesini istemesi. <span class="feedback" id="f7c"></span></label>
+            <label><input type="number" min="1" max="5" id="q7d"> Nusrat gemisine mayın döşeme görevinin verilmesi. <span class="feedback" id="f7d"></span></label>
+            <label><input type="number" min="1" max="5" id="q7e"> Komutanın tarihe geçen "Ben size taarruzu emretmiyor, ölmeyi emrediyorum" emrini vermesi. <span class="feedback" id="f7e"></span></label>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="checkAnswers()">Cevapları Kontrol Et</button>
+        <div id="finalResult" class="result"></div>
+    </form>
+</div>
+
+<script>
+    function checkAnswers() {
+        let score = 0;
+        let total = 17; // Toplam değerlendirilen adım sayısı
+
+        // Doğru Cevaplar
+        const answers = {
+            q1: "B", q2: "D", q3: "B", q4: "A", // Çoktan seçmeli
+            q5a: "Y", q5b: "D", q5c: "D", q5d: "D", // D/Y
+            q6a: "D", q6b: "B", q6c: "C", q6d: "A", // Eşleştirme
+            q7a: "3", q7b: "1", q7c: "5", q7d: "2", q7e: "4" // Sıralama
+        };
+
+        // Kontrol Fonksiyonu
+        function evaluate(id, correctVal, type) {
+            let userVal;
+            let feedbackEl = document.getElementById("f" + id.replace('q', ''));
+            
+            if(type === "radio") {
+                let selected = document.querySelector(`input[name="${id}"]:checked`);
+                userVal = selected ? selected.value : null;
+            } else {
+                userVal = document.getElementById(id).value;
+            }
+
+            feedbackEl.style.display = "inline";
+            if(userVal === correctVal) {
+                feedbackEl.innerHTML = "✓ Doğru";
+                feedbackEl.className = "feedback text-green";
+                score++;
+            } else {
+                feedbackEl.innerHTML = `✗ Yanlış (Doğru Cevap: ${correctVal})`;
+                feedbackEl.className = "feedback text-red";
+            }
+        }
+
+        // Çoktan Seçmeli
+        ['q1', 'q2', 'q3', 'q4'].forEach(q => evaluate(q, answers[q], "radio"));
+        // Doğru/Yanlış
+        ['q5a', 'q5b', 'q5c', 'q5d'].forEach(q => evaluate(q, answers[q], "select"));
+        // Eşleştirme
+        ['q6a', 'q6b', 'q6c', 'q6d'].forEach(q => evaluate(q, answers[q], "select"));
+        // Sıralama
+        ['q7a', 'q7b', 'q7c', 'q7d', 'q7e'].forEach(q => evaluate(q, answers[q], "input"));
+
+        // Sonucu Göster
+        let resultDiv = document.getElementById("finalResult");
+        resultDiv.style.display = "block";
+        let percentage = Math.round((score / total) * 100);
+        
+        if (percentage >= 80) {
+            resultDiv.className = "result correct-bg text-green";
+            resultDiv.innerHTML = `Tebrikler! Puanınız: ${score} / ${total} (%${percentage}). Harika bir iş çıkardınız!`;
+        } else {
+            resultDiv.className = "result incorrect-bg text-red";
+            resultDiv.innerHTML = `Puanınız: ${score} / ${total} (%${percentage}). Hatalı olduğunuz soruları tekrar gözden geçirebilirsiniz.`;
+        }
+    }
+</script>
+
+</body>
+</html>
